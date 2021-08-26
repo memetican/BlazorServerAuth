@@ -89,6 +89,10 @@ namespace BlazorServerAuth
             {
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
+
+                // For Blazor Server Cookie Auth
+                // https://blazorhelpwebsite.com/ViewBlogPost/36
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
